@@ -1,0 +1,9 @@
+This starter package zip was published on Wed Oct 26 04:31:27 UTC 2011.
+
+Last change on this starter package was:
+commit 120461c5e997027b1dd134ef3d484b8687461aef
+Date:   Tue Sep 27 22:29:03 2011 +1000
+
+    OCaml starter: added hill support
+
+Check https://github.com/aichallenge/aichallenge/tree/epsilon/ants/dist/starter_bots/ocaml for new versions.
