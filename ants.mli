@@ -37,6 +37,7 @@ type tgame_state = {
 type dir = [ `E | `N | `S | `Stop | `W ]
 type tile = [ `Ant | `Dead | `Food | `Land | `Unseen | `Water ]
 type order = (int * int) * dir
+val string_of_dir : dir -> string
 class swrap :
   tgame_state ->
   object

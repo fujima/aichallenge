@@ -1,12 +1,20 @@
 
+TARGET = mybot
 
-.PHONY: all clean
+.PHONY: all clean test
 
-all: bytecode
-	cd tools; ./play_one_game.sh > /dev/null &
+all: nativecode
+	./play_one_game.sh "./$(TARGET).native" > /dev/null &
+	tail -f _build/mybot_err.log &
 
-bytecode: ants.ml MyBot.ml ants.ml
-	ocamlbuild -lib unix MyBot.byte
+bytecode: ants.ml $(TARGET).ml 
+	ocamlbuild $(TARGET).byte
+
+nativecode: ants.ml $(TARGET).ml
+	ocamlbuild $(TARGET).native
+
+test: bytecode
+	cd tools; ./test_bot.sh
 
 clean:
 	ocamlbuild -clean

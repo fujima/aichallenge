@@ -2,7 +2,7 @@
 PlanetWars starter package and adapted. If you find any bugs or make 
 any improvements, please post to the forum or upload a fix! *)
 
-let out_chan = stderr (* open_out "mybot_err.log" *)
+let out_chan = open_out "mybot_err.log"
 
 (* this previously used Sys.time, but it's wrong in this context
  *)
